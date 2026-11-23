@@ -13,6 +13,10 @@ Branch `m1` of **Choosing AI-Assisted Web Development Workflows**. This is every
 | `lovable-prompt.md` | The prompt used to generate the My Agenda prototype in Lovable |
 | `lovable-prototype-reference/` | A copy of that prototype's code, so you can run and inspect it locally |
 
+## Prerequisites
+
+Node.js 20.19 or later, and Git.
+
 ## Run the app
 
 ```bash

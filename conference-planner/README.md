@@ -12,7 +12,7 @@ npm test         # Vitest + Testing Library
 npm run build    # type-check + production build
 ```
 
-Requires Node 18+.
+Requires Node 20.19 or later.
 
 ## Project layout
 
