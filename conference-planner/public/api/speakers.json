@@ -1,0 +1,10 @@
+[
+  { "id": "sp01", "name": "Maya Lindqvist", "role": "Principal Engineer", "company": "Northwind Labs" },
+  { "id": "sp02", "name": "Daniel Okafor", "role": "Staff Front-end Engineer", "company": "Brightline" },
+  { "id": "sp03", "name": "Priya Raman", "role": "Developer Advocate", "company": "Codepath Tools" },
+  { "id": "sp04", "name": "Lucas Ferreira", "role": "Design Systems Lead", "company": "Fable & Co" },
+  { "id": "sp05", "name": "Hannah Weiss", "role": "Senior Software Engineer", "company": "Parcelly" },
+  { "id": "sp06", "name": "Kenji Watanabe", "role": "QA Architect", "company": "Lumen Health" },
+  { "id": "sp07", "name": "Sofia Martínez", "role": "Accessibility Specialist", "company": "Open Access Studio" },
+  { "id": "sp08", "name": "Tom Becker", "role": "Product Designer", "company": "Brightline" }
+]

@@ -1,30 +1,47 @@
-# Choosing AI-Assisted Web Development Workflows
+# Module 1: Assess Project Requirements and Artifacts
 
-Course code for **Choosing AI-Assisted Web Development Workflows** on Pluralsight, the capstone of the *AI-Assisted Web Development: From Prototype to Production* path.
+Branch `m1` of **Choosing AI-Assisted Web Development Workflows**. This is everything you need for Module 1's demos.
 
-You'll take one feature, **My Agenda**, for an existing conference app (Horizon Web Conf 2026) and decide how to build it: design-to-code, prompt-to-code, or a combined workflow. Then you'll implement it, validate it, and make a release recommendation.
+## What's here
 
-## One branch per module
+| Folder / file | What it is |
+| --- | --- |
+| `conference-planner/` | The existing conference app (React + TypeScript + Vite). It has a schedule, speakers, and tracks, but no My Agenda yet. |
+| `conference-planner/docs/acceptance-criteria.md` | My Agenda acceptance criteria (AC1–AC6) |
+| `conference-planner/docs/constraints-checklist.md` | The constraints checklist: a blank table to fill in, plus a completed version |
+| `figma-design-reference/` | The My Agenda design: saved, conflict, agenda, and mobile states |
+| `lovable-prompt.md` | The prompt used to generate the My Agenda prototype in Lovable |
+| `lovable-prototype-reference/` | A copy of that prototype's code, so you can run and inspect it locally |
 
-Each branch holds the code as it stands at the **start** of that module's demos.
-
-| Branch | Module | What's added |
-| --- | --- | --- |
-| [`m1`](../../tree/m1) | 1. Assess Project Requirements and Artifacts | Starter React app, acceptance criteria, constraints checklist, Figma design reference, Lovable prompt and reference prototype |
-| [`m2`](../../tree/m2) | 2. Compare and Select AI-Assisted Development Workflows | Design-to-code output, workflow comparison matrix, decision record |
+## Run the app
 
 ```bash
-git clone https://github.com/adhithiravi/Choosing-AI-Assisted-Web-Dev-Workflows.git
-cd Choosing-AI-Assisted-Web-Dev-Workflows
-git checkout m1
+cd conference-planner
+npm install
+npm run dev      # http://localhost:5173
+npm test
 ```
 
-Then follow the README on that branch.
+## Run the prototype
 
-## Prerequisites
+```bash
+cd lovable-prototype-reference
+npm install
+npm run dev      # http://localhost:8080
+```
 
-- Node.js 18 or later
-- Experience with JavaScript or TypeScript and React
-- Basic Git
-- A Figma account and a Lovable account (covered earlier in the learning path)
-- An AI coding assistant (the course uses Cursor; any assistant works)
+Or paste `lovable-prompt.md` into a new Lovable project to generate your own. Its output varies, so check that it lets you save two overlapping sessions (the gap we examine in Clip 2).
+
+## The sessions to watch
+
+| | Session | Time |
+| --- | --- | --- |
+| A | Design Tokens at Scale | 10:00–11:00 AM |
+| B | Hands-on: Testing AI-Generated Components | 10:30–11:30 AM |
+| C | Accessible Interactions by Default | 11:00 AM–12:00 PM |
+
+A and B overlap, so adding both must be blocked. A and C are back-to-back, so both must be allowed.
+
+## Next
+
+Module 2 continues on the [`m2`](../../tree/m2) branch.
