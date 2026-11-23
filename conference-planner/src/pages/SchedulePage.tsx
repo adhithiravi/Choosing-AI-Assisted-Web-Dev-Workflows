@@ -38,7 +38,10 @@ export function SchedulePage({ sessions, speakersById }: SchedulePageProps) {
 
       {slots.map((slot) => (
         <div key={slot.start} className={styles.slot}>
-          <h2 className={styles.slotTime}>{formatTime(slot.start)}</h2>
+          <h2 className={styles.slotTime}>
+            {formatTime(slot.start).split(' ')[0]}
+            <small>{formatTime(slot.start).split(' ')[1]}</small>
+          </h2>
           <div className={styles.grid}>
             {slot.sessions.map((session) => (
               <SessionCard

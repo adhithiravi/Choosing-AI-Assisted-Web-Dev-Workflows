@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>My Agenda – Design reference (for Figma)</title>
 <style>
 :root{
-  --color-bg:#f6f6fb;--color-surface:#fff;--color-surface-sunken:#efeff6;--color-border:#e2e2ee;--color-border-strong:#c9c9da;
-  --color-text:#17172b;--color-text-muted:#55556f;--color-primary:#5530e8;--color-primary-subtle:#efebff;--color-on-primary:#fff;
-  --color-focus:#ff2f8e;--color-success:#067647;--color-success-subtle:#e9f9f0;--color-danger:#b42318;--color-danger-subtle:#fef1f0;
-  --track-keynote:#17172b;--track-frontend:#00b3f0;--track-ai:#a32cf5;--track-design:#ff8a00;
-  --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --color-bg:#f3f4f6;--color-surface:#fff;--color-surface-sunken:#eceef2;--color-border:#dfe2e8;--color-border-strong:#b9bfc9;
+  --color-text:#0e1116;--color-text-muted:#545b67;--ink:#0e1116;--on-ink:#fff;--on-ink-muted:#a4abb7;
+  --color-primary:#e8461e;--color-primary-subtle:#fdebe5;--color-on-primary:#fff;--color-focus:#2563eb;
+  --color-success:#067647;--color-danger:#b42318;--color-danger-subtle:#fdeceb;
+  --track-keynote:#0e1116;--track-frontend:#0f8b8d;--track-ai:#c2185b;--track-design:#2b59c3;
+  --font:'Public Sans',system-ui,sans-serif;--display:'Archivo','Helvetica Neue',Arial,sans-serif;
 }
 *{box-sizing:border-box}
 body{margin:0;background:#2b2b3a;font-family:var(--font);color:var(--color-text);padding:48px;}
@@ -20,66 +22,63 @@ body{margin:0;background:#2b2b3a;font-family:var(--font);color:var(--color-text)
 .frame{background:var(--color-bg);overflow:hidden;border-radius:4px}
 .desktop{width:1200px}
 .mobile{width:390px}
-/* header */
-.hdr{background:#fff;border-bottom:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center;padding:12px 32px}
+.hdr{background:var(--ink);color:var(--on-ink);display:flex;justify-content:space-between;align-items:center;padding:0 32px;min-height:64px}
 .brand{display:flex;gap:12px;align-items:center}
-.logo{width:36px;height:36px;border-radius:8px;background:var(--color-primary);color:#fff;font-weight:800;display:grid;place-items:center}
-.bname{font-weight:700;margin:0}.bwhere{margin:0;font-size:12px;color:var(--color-text-muted)}
-.nav{display:flex;gap:4px}
-.navbtn{padding:8px 12px;border-radius:999px;font-size:14px;font-weight:600;color:var(--color-text-muted)}
-.navbtn.current{color:var(--color-primary);background:var(--color-primary-subtle)}
+.logo{width:36px;height:36px;border-radius:0;background:none;color:transparent;font-size:0;position:relative}
+.logo::before{content:'';position:absolute;left:7px;top:9px;width:22px;height:22px;border-radius:50%;background:var(--color-primary)}
+.logo::after{content:'';position:absolute;left:4px;top:22px;width:28px;height:14px;background:var(--ink);box-shadow:inset 0 3px 0 0 var(--ink),inset 0 5.5px 0 0 var(--color-primary),inset 0 8px 0 0 var(--ink),inset 0 10.5px 0 0 rgba(232,70,30,.6)}
+.bname{font-family:var(--display);font-weight:800;margin:0;font-size:18px}.bwhere{margin:0;font-size:12px;color:var(--on-ink-muted)}
+.nav{display:flex;gap:24px}
+.navbtn{position:relative;padding:20px 0;font-size:14px;font-weight:600;color:var(--on-ink-muted)}
+.navbtn.current{color:var(--on-ink)}
+.navbtn.current::after{content:'';position:absolute;left:0;right:0;bottom:12px;height:3px;border-radius:2px;background:var(--color-primary)}
 .count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;margin-left:6px;border-radius:999px;background:var(--color-primary);color:#fff;font-size:12px}
 .main{padding:32px}
-h1{margin:0;font-size:32px}.sub{margin:4px 0 24px;color:var(--color-text-muted);font-size:14px}
-.slot{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--color-border)}
-.slot h2{margin:16px 0 0;font-size:16px;color:var(--color-text-muted)}
+h1{margin:0;font-family:var(--display);font-weight:800;font-size:36px;letter-spacing:-.02em}.sub{margin:4px 0 24px;color:var(--color-text-muted);font-size:14px}
+.slot{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:24px 0;border-top:1px solid var(--color-border)}
+.slot h2 small{margin-left:4px;font-family:var(--font);font-size:14px;font-weight:600;color:var(--color-text-muted)}
+.slot h2{margin:8px 0 0;font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.02em}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-/* card */
-.card{position:relative;display:flex;flex-direction:column;gap:8px;padding:16px 16px 16px 20px;background:#fff;border:1px solid var(--color-border);border-radius:12px;box-shadow:0 1px 2px rgba(23,23,43,.06);overflow:hidden}
-.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--tc);border-radius:11px 0 0 11px}
-.card.rel{overflow:visible}
+.card{position:relative;display:flex;flex-direction:column;gap:8px;padding:16px;background:#fff;border:1px solid var(--color-border);border-radius:10px;box-shadow:0 1px 2px rgba(14,17,22,.06)}
 .t-keynote{--tc:var(--track-keynote)}.t-frontend{--tc:var(--track-frontend)}.t-ai{--tc:var(--track-ai)}.t-design{--tc:var(--track-design)}
-.card.saved{border:2px solid var(--color-primary);background:linear-gradient(0deg,#fff,#fff)}
+.card.saved{border:2px solid var(--color-primary)}
+.card.rel{overflow:visible}
 .meta{display:flex;justify-content:space-between;font-size:14px;color:var(--color-text-muted)}
 .meta b{color:var(--color-text)}
-.title{margin:0;font-size:18px;line-height:1.3}
+.title{margin:0;font-family:var(--display);font-weight:600;font-size:18px;line-height:1.25}
 .spk{margin:0;font-size:14px;color:var(--color-text-muted)}
-.tags{display:flex;gap:8px;flex-wrap:wrap}
-.tag{padding:2px 8px;border-radius:999px;font-size:12px;background:var(--color-surface-sunken);color:var(--color-text-muted)}
-.tag.track{background:color-mix(in srgb,var(--tc) 14%,white);color:var(--color-text);font-weight:600}
-.badge-saved{position:absolute;top:12px;right:12px;display:none}
+.tags{display:flex;gap:8px 12px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--color-text-muted)}
+.tag{padding:0;background:none}
+.tag:not(.track)::before{content:'·';margin-right:12px;color:var(--color-border-strong)}
+.tag.track{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--tc)}
+.tag.track::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--tc)}
 .actions{display:flex;gap:8px;margin-top:8px;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;font-size:14px;font-weight:600;border:1px solid transparent;line-height:1}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;font-size:14px;font-weight:600;border:1px solid transparent;line-height:1}
 .btn.primary{background:var(--color-primary);color:#fff}
 .btn.secondary{background:#fff;border-color:var(--color-border-strong);color:var(--color-text)}
-.btn.selected{background:var(--color-primary-subtle);border-color:var(--color-primary);color:var(--color-primary)}
+.btn.selected{background:var(--ink);border-color:var(--ink);color:#fff}
 .btn.focus{outline:3px solid var(--color-focus);outline-offset:2px}
 .btn.disabled{opacity:.55}
-.status-saved{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--color-success)}
-.conflict{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:8px;background:var(--color-danger-subtle);border:1px solid #f7c6c2;color:var(--color-danger);font-size:14px;line-height:1.4}
+.conflict{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:8px;background:var(--color-danger-subtle);border:1px solid #f5c2bd;color:var(--color-danger);font-size:14px;line-height:1.4}
 .conflict svg{flex:none;margin-top:1px}
 .conflict b{color:#7a1a12}
-/* agenda page */
 .agenda-layout{display:grid;grid-template-columns:1fr;gap:16px;max-width:760px}
 .agenda-item{display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:start}
-.agenda-item .time{font-weight:700;color:var(--color-text-muted);padding-top:16px;font-size:14px}
-.empty{padding:40px;text-align:center;background:#fff;border:1px dashed var(--color-border-strong);border-radius:12px;color:var(--color-text-muted)}
-.empty h3{color:var(--color-text);margin:0 0 4px}
-/* notes */
+.agenda-item .time{font-family:var(--display);font-weight:800;color:var(--color-text);padding-top:16px;font-size:16px}
+.empty{padding:40px;text-align:center;background:#fff;border:1px dashed var(--color-border-strong);border-radius:10px;color:var(--color-text-muted)}
+.empty h3{color:var(--color-text);margin:0 0 4px;font-family:var(--display)}
 .notes{width:520px;background:#fffbe6;color:#3a3200;border-radius:4px;padding:24px;font-size:14px;line-height:1.5}
 .notes h3{margin:0 0 8px;font-size:16px}.notes ul{margin:0 0 16px;padding-left:18px}
 .notes code{background:#fff3b0;padding:0 4px;border-radius:3px}
-.anno{position:absolute;background:var(--color-focus);color:#fff;font-size:12px;font-weight:700;border-radius:999px;width:24px;height:24px;display:grid;place-items:center;box-shadow:0 0 0 3px #fff}
+.anno{position:absolute;background:#ff2f8e;color:#fff;font-size:12px;font-weight:700;border-radius:999px;width:24px;height:24px;display:grid;place-items:center;box-shadow:0 0 0 3px #fff}
 .rel{position:relative}
-/* mobile */
-.mobile .hdr{padding:12px 16px}.mobile .bwhere{display:none}
+.mobile .hdr{padding:0 16px}.mobile .bwhere{display:none}
 .mobile .main{padding:24px 16px}
 .mobile .slot{grid-template-columns:1fr;gap:8px}.mobile .slot h2{margin:0}
 .mobile .grid{grid-template-columns:1fr}
 .mobile h1{font-size:28px}
-/* components sheet */
 .sheet{width:760px;background:#fff;padding:32px;border-radius:4px}
-.sheet h3{margin:0 0 12px;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted)}
+.sheet h3{margin:0 0 12px;font-size:14px;color:var(--color-text-muted)}
 .row{display:flex;gap:16px;align-items:center;margin-bottom:24px;flex-wrap:wrap}
 .cap{font-size:12px;color:var(--color-text-muted);display:block;margin-top:6px;text-align:center}
 .swatch{width:64px;height:40px;border-radius:8px;border:1px solid var(--color-border)}
@@ -92,18 +91,18 @@ h1{margin:0;font-size:32px}.sub{margin:4px 0 24px;color:var(--color-text-muted);
 <div class="frame-wrap">
 <div class="frame-label">01 · Schedule — default (desktop 1200)</div>
 <div class="frame desktop" id="frame-01">
-  <div class="hdr"><div class="brand"><div class="logo">H</div><div><p class="bname">Horizon Web Conf 2026</p><p class="bwhere">March 12 · Chicago, IL</p></div></div>
+  <div class="hdr"><div class="brand"><div class="logo">H</div><div><p class="bname">Horizon Web Conf</p><p class="bwhere">March 12, 2026 · Chicago</p></div></div>
   <div class="nav"><span class="navbtn current">Schedule</span><span class="navbtn">Speakers</span><span class="navbtn">My Agenda<span class="count">0</span></span></div></div>
   <div class="main">
     <h1>Schedule</h1><p class="sub">Thursday, March 12, 2026 · 12 sessions · Times shown in Central Time</p>
-    <div class="slot"><h2>10:00 AM</h2><div class="grid">
+    <div class="slot"><h2>10:00<small>AM</small></h2><div class="grid">
       <div class="card t-design"><div class="meta"><b>10:00 AM – 11:00 AM</b><span>Hall A</span></div><h3 class="title">Design Tokens at Scale</h3><p class="spk">Lucas Ferreira</p><div class="tags"><span class="tag track">Design Systems</span><span class="tag">Talk</span><span class="tag">Intermediate</span></div><div class="actions"><span class="btn secondary">＋ Add to My Agenda</span></div></div>
       <div class="card t-frontend"><div class="meta"><b>10:00 AM – 10:45 AM</b><span>Room 201</span></div><h3 class="title">State Management Without the Drama</h3><p class="spk">Hannah Weiss</p><div class="tags"><span class="tag track">Frontend</span><span class="tag">Talk</span><span class="tag">Beginner</span></div><div class="actions"><span class="btn secondary">＋ Add to My Agenda</span></div></div>
     </div></div>
-    <div class="slot"><h2>10:30 AM</h2><div class="grid">
+    <div class="slot"><h2>10:30<small>AM</small></h2><div class="grid">
       <div class="card t-ai"><div class="meta"><b>10:30 AM – 11:30 AM</b><span>Room 202</span></div><h3 class="title">Hands-on: Testing AI-Generated Components</h3><p class="spk">Kenji Watanabe, Priya Raman</p><div class="tags"><span class="tag track">AI &amp; Tooling</span><span class="tag">Workshop</span><span class="tag">Intermediate</span></div><div class="actions"><span class="btn secondary">＋ Add to My Agenda</span></div></div>
     </div></div>
-    <div class="slot"><h2>11:00 AM</h2><div class="grid">
+    <div class="slot"><h2>11:00<small>AM</small></h2><div class="grid">
       <div class="card t-frontend"><div class="meta"><b>11:00 AM – 12:00 PM</b><span>Room 201</span></div><h3 class="title">Accessible Interactions by Default</h3><p class="spk">Sofia Martínez</p><div class="tags"><span class="tag track">Frontend</span><span class="tag">Talk</span><span class="tag">Intermediate</span></div><div class="actions"><span class="btn secondary">＋ Add to My Agenda</span></div></div>
     </div></div>
   </div>
@@ -114,20 +113,20 @@ h1{margin:0;font-size:32px}.sub{margin:4px 0 24px;color:var(--color-text-muted);
 <div class="frame-wrap">
 <div class="frame-label">02 · Schedule — saved + conflict + back-to-back (desktop 1200)</div>
 <div class="frame desktop rel" id="frame-02">
-  <div class="hdr"><div class="brand"><div class="logo">H</div><div><p class="bname">Horizon Web Conf 2026</p><p class="bwhere">March 12 · Chicago, IL</p></div></div>
+  <div class="hdr"><div class="brand"><div class="logo">H</div><div><p class="bname">Horizon Web Conf</p><p class="bwhere">March 12, 2026 · Chicago</p></div></div>
   <div class="nav"><span class="navbtn current">Schedule</span><span class="navbtn">Speakers</span><span class="navbtn">My Agenda<span class="count">1</span></span></div></div>
   <div class="main">
     <h1>Schedule</h1><p class="sub">Thursday, March 12, 2026 · 12 sessions · Times shown in Central Time</p>
-    <div class="slot"><h2>10:00 AM</h2><div class="grid">
+    <div class="slot"><h2>10:00<small>AM</small></h2><div class="grid">
       <div class="card t-design saved rel"><span class="anno" style="right:-10px;top:-10px">1</span><div class="meta"><b>10:00 AM – 11:00 AM</b><span>Hall A</span></div><h3 class="title">Design Tokens at Scale</h3><p class="spk">Lucas Ferreira</p><div class="tags"><span class="tag track">Design Systems</span><span class="tag">Talk</span><span class="tag">Intermediate</span></div><div class="actions"><span class="btn selected">✓ In My Agenda</span><span class="btn" style="color:var(--color-text-muted)">Remove</span></div></div>
       <div class="card t-frontend"><div class="meta"><b>10:00 AM – 10:45 AM</b><span>Room 201</span></div><h3 class="title">State Management Without the Drama</h3><p class="spk">Hannah Weiss</p><div class="tags"><span class="tag track">Frontend</span><span class="tag">Talk</span><span class="tag">Beginner</span></div><div class="actions"><span class="btn secondary">＋ Add to My Agenda</span></div></div>
     </div></div>
-    <div class="slot"><h2>10:30 AM</h2><div class="grid">
+    <div class="slot"><h2>10:30<small>AM</small></h2><div class="grid">
       <div class="card t-ai rel" style="grid-column:span 2"><span class="anno" style="right:-10px;top:-10px">2</span><div class="meta"><b>10:30 AM – 11:30 AM</b><span>Room 202</span></div><h3 class="title">Hands-on: Testing AI-Generated Components</h3><p class="spk">Kenji Watanabe, Priya Raman</p><div class="tags"><span class="tag track">AI &amp; Tooling</span><span class="tag">Workshop</span><span class="tag">Intermediate</span></div><div class="actions"><span class="btn secondary focus">＋ Add to My Agenda</span></div>
         <div class="conflict" role="alert"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg><span><b>Can't add this session.</b> It overlaps with <b>Design Tokens at Scale</b> (10:00 – 11:00 AM) in your agenda. Remove that session first to add this one.</span></div>
       </div>
     </div></div>
-    <div class="slot"><h2>11:00 AM</h2><div class="grid">
+    <div class="slot"><h2>11:00<small>AM</small></h2><div class="grid">
       <div class="card t-frontend rel"><span class="anno" style="right:-10px;top:-10px">3</span><div class="meta"><b>11:00 AM – 12:00 PM</b><span>Room 201</span></div><h3 class="title">Accessible Interactions by Default</h3><p class="spk">Sofia Martínez</p><div class="tags"><span class="tag track">Frontend</span><span class="tag">Talk</span><span class="tag">Intermediate</span></div><div class="actions"><span class="btn secondary">＋ Add to My Agenda</span></div></div>
     </div></div>
   </div>
@@ -153,7 +152,7 @@ h1{margin:0;font-size:32px}.sub{margin:4px 0 24px;color:var(--color-text-muted);
   <h3>Accessibility intent</h3>
   <ul>
     <li>Conflict message must be announced to screen readers when it appears.</li>
-    <li>Focus stays on the button that was pressed (pink focus ring shown on card 2).</li>
+    <li>Focus stays on the button that was pressed (blue focus ring shown on card 2).</li>
     <li>All actions reachable with keyboard. Don't rely on color alone for the saved state: label changes too.</li>
   </ul>
   <h3>Components</h3>
@@ -166,7 +165,7 @@ h1{margin:0;font-size:32px}.sub{margin:4px 0 24px;color:var(--color-text-muted);
 <div class="frame-wrap">
 <div class="frame-label">03 · My Agenda page — with sessions / empty (desktop 1200)</div>
 <div class="frame desktop" id="frame-03">
-  <div class="hdr"><div class="brand"><div class="logo">H</div><div><p class="bname">Horizon Web Conf 2026</p><p class="bwhere">March 12 · Chicago, IL</p></div></div>
+  <div class="hdr"><div class="brand"><div class="logo">H</div><div><p class="bname">Horizon Web Conf</p><p class="bwhere">March 12, 2026 · Chicago</p></div></div>
   <div class="nav"><span class="navbtn">Schedule</span><span class="navbtn">Speakers</span><span class="navbtn current">My Agenda<span class="count">2</span></span></div></div>
   <div class="main" style="display:grid;grid-template-columns:1fr 360px;gap:40px">
     <div>
@@ -192,10 +191,10 @@ h1{margin:0;font-size:32px}.sub{margin:4px 0 24px;color:var(--color-text-muted);
   <div class="nav"><span class="navbtn">My Agenda<span class="count">1</span></span></div></div>
   <div class="main">
     <h1>Schedule</h1><p class="sub">Thu, March 12 · Central Time</p>
-    <div class="slot"><h2>10:00 AM</h2><div class="grid">
+    <div class="slot"><h2>10:00<small>AM</small></h2><div class="grid">
       <div class="card t-design saved"><div class="meta"><b>10:00 – 11:00 AM</b><span>Hall A</span></div><h3 class="title">Design Tokens at Scale</h3><p class="spk">Lucas Ferreira</p><div class="actions"><span class="btn selected">✓ In My Agenda</span><span class="btn" style="color:var(--color-text-muted)">Remove</span></div></div>
     </div></div>
-    <div class="slot"><h2>10:30 AM</h2><div class="grid">
+    <div class="slot"><h2>10:30<small>AM</small></h2><div class="grid">
       <div class="card t-ai"><div class="meta"><b>10:30 – 11:30 AM</b><span>Room 202</span></div><h3 class="title">Hands-on: Testing AI-Generated Components</h3><p class="spk">Kenji Watanabe, Priya Raman</p><div class="actions"><span class="btn secondary">＋ Add to My Agenda</span></div>
       <div class="conflict"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg><span><b>Can't add this session.</b> It overlaps with <b>Design Tokens at Scale</b> (10:00 – 11:00 AM). Remove that session first.</span></div></div>
     </div></div>
@@ -219,15 +218,15 @@ h1{margin:0;font-size:32px}.sub{margin:4px 0 24px;color:var(--color-text-muted);
   <div class="row"><div class="conflict" style="max-width:520px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg><span><b>Can't add this session.</b> It overlaps with <b>{title}</b> ({time range}) in your agenda.</span></div></div>
   <h3>Tokens</h3>
   <div class="row">
-    <div><div class="swatch" style="background:#5530e8"></div><span class="cap">primary</span></div>
-    <div><div class="swatch" style="background:#efebff"></div><span class="cap">primary-subtle</span></div>
+    <div><div class="swatch" style="background:#e8461e"></div><span class="cap">primary</span></div>
+    <div><div class="swatch" style="background:#fdebe5"></div><span class="cap">primary-subtle</span></div>
     <div><div class="swatch" style="background:#b42318"></div><span class="cap">danger</span></div>
-    <div><div class="swatch" style="background:#fef1f0"></div><span class="cap">danger-subtle</span></div>
+    <div><div class="swatch" style="background:#fdeceb"></div><span class="cap">danger-subtle</span></div>
     <div><div class="swatch" style="background:#067647"></div><span class="cap">success</span></div>
-    <div><div class="swatch" style="background:#ff2f8e"></div><span class="cap">focus</span></div>
-    <div><div class="swatch" style="background:#00b3f0"></div><span class="cap">track-frontend</span></div>
-    <div><div class="swatch" style="background:#a32cf5"></div><span class="cap">track-ai</span></div>
-    <div><div class="swatch" style="background:#ff8a00"></div><span class="cap">track-design</span></div>
+    <div><div class="swatch" style="background:#2563eb"></div><span class="cap">focus</span></div>
+    <div><div class="swatch" style="background:#0f8b8d"></div><span class="cap">track-frontend</span></div>
+    <div><div class="swatch" style="background:#c2185b"></div><span class="cap">track-ai</span></div>
+    <div><div class="swatch" style="background:#2b59c3"></div><span class="cap">track-design</span></div>
   </div>
 </div>
 </div>
