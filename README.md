@@ -23,7 +23,7 @@ Then follow the README on that branch.
 
 ## Prerequisites
 
-- Node.js 18 or later
+- Node.js 20.19 or later
 - Experience with JavaScript or TypeScript and React
 - Basic Git
 - A Figma account and a Lovable account (covered earlier in the learning path)
